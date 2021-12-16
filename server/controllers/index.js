@@ -3,8 +3,8 @@ const AllComments = require('../models/comment');
 
 const getAllPosts = async (req, res) => {
   try {
-    const parks = await AllPosts.find();
-    return res.status(201).json({ parks });
+    const posts = await AllPosts.find();
+    return res.status(201).json({ posts });
   } catch (error) {
     return res.status(500).send(error.message);
   }
@@ -12,8 +12,8 @@ const getAllPosts = async (req, res) => {
 
 const getAllComments = async (req, res) => {
     try {
-      const parks = await AllComments.find();
-      return res.status(201).json({ parks });
+      const comments = await AllComments.find();
+      return res.status(201).json({ comments });
     } catch (error) {
       return res.status(500).send(error.message);
     }
