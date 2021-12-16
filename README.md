@@ -24,6 +24,7 @@ All you'll need to do is start the React App and the content will populate! If y
 ### Technologies Used
 - **Front End:** HTML, CSS, JavaScript, React
 - **Back End:** MongoDB, Mongoose, Express, Node.js
+- **Applications:** Adobe Photoshop & Adobe xD
 
 - Link to [Trello Board](https://trello.com/b/QM02MyMf/nerdfeed-all-muggles-are-welcome-to-nerd-out)
 
