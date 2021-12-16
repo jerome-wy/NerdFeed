@@ -1,5 +1,5 @@
 ![image](https://i.imgur.com/QUPmgFY.png)
-# NerdFeed | All muggles are welcome to nerd out
+# NerdFeed | A home for all nerds (and muggles)
 
 ## Date: 12/15/2021
 
@@ -11,7 +11,7 @@
 
 ### Description
 
-##### NerdFeed is a home for all things nerd. Users are able to sign up and create a post (subject/title + content). Users are encouraged to post about anything nerdy (or non-nerdy). NerdFeed is a community where we share our likes/dislikes on video games, esports, movies, tv shows, and anything else! 
+NerdFeed is a home for all things nerd. Users are able to sign up and create a post (subject/title + content). Users are encouraged to post about anything nerdy (or non-nerdy). NerdFeed is a community where we share our likes/dislikes on video games, esports, movies, tv shows, and anything else! 
 
 ---
 
