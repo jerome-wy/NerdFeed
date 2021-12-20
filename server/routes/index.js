@@ -3,7 +3,7 @@ const controllers = require('../controllers/index');
 const router = Router();
 
 // TEST GET TO CONFIRM CONNECTION
-router.get('/', (request, response) => response.send('This is root!'));
+// router.get('/', (request, response) => response.send('This is root!'));
 
 // POSTS PAGE TO VIEW ALL POSTS/NEWS FEED
 router.get('/posts', controllers.getAllPosts);
