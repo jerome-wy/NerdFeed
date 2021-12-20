@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+:root {
+  --color1: #0e465d;
+  --color2: #086947;
 }
+
+body {
+  font-family: 'Bakbak One', cursive;
+}
+
+.Header_container {
+  display: flex;
+  background-color: var(--color1);
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navItems {
+  display: inline;
+  list-style: none;
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.Buttons_container {
+  left: 600px;
+  display: flex;
+  justify-content: right;
+}
+
+button {
+  font-family: 'Bakbak One', cursive;
+  margin-right: 30px;
+}
+
+.signUpBtn:hover {
+  background-color: var(--color2);
+  transition: 0.5s
+  
+}
+
+.signInBtn:hover {
+  background-color: lightseagreen;
+  transition: 0.5s
+  
+}
+.signUpBtn {
+  background-color: lightslategray;
+  height: 35px;
+  width: 120px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  margin-top: 12px;
+}
+
+.signInBtn {
+  background-color: var(--color2);
+  height: 20px;
+  width: 80px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  margin-top: 20px;
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  width: 400px;
+  margin-top: 100px;
+}
+
+.inputForms {
+  box-sizing: border-box;
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  box-shadow: 0px -1px 4px lightgray;
+  border: none;
+  margin: 10px;
+}
+
+.inputForms::placeholder {
+  padding-left: 15px;
+  color: lightgray;
+  font-size: 20px;
+}
+
+.submit {
+  background-color: var(--color2);
+  width: 290px;
+  height: 45px;
+  border-radius: 10px;
+  margin-left: 15px;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+.submit:hover {
+  background-color: #0a553b;
+  transition: 0.5s;
+}
+

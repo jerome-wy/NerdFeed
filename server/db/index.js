@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+const env = require('dotenv').config();
 
 mongoose
-  .connect('mongodb+srv://jerome:generalassembly118@cluster0.wuv3l.mongodb.net/NerdFeedDatabase?retryWrites=true&w=majority',
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.wuv3l.mongodb.net/NerdFeedDatabase?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true})
