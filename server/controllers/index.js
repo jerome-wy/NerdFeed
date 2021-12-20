@@ -19,7 +19,37 @@ const getAllComments = async (req, res) => {
     }
   };
 
+  
+const getPostsByYear = async (req, res) => {
+  try {
+    const comments = await AllComments.find();
+    return res.status(201).json({ comments });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+
+const getPostsByDate = async (req, res) => {
+  try {
+    const comments = await AllComments.find();
+    return res.status(201).json({ comments });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+
+const getPostsByName = async (req, res) => {
+  try {
+    const comments = await AllComments.find();
+    return res.status(201).json({ comments });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
 module.exports = {
-  getAllParks,
-  getParkById
+  getAllPosts,
+  getAllComments
 };

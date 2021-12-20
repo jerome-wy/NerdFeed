@@ -3,10 +3,9 @@ const Schema = mongoose.Schema;
 
 const AllComments = new Schema(
   {
-    name: { type: String, required: true },
-    title: { type: String, required: true },
-    image: { type: String, required: false },
-    content: { type: String, required: false },
+    comment_name: { type: String, required: true },
+    comment_image: { type: String, required: false },
+    comment_content: { type: String, required: false },
     
   },
   { timestamps: true }

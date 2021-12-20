@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const AllPosts = new Schema(
   {
-    name: { type: String, required: true },
-    title: { type: String, required: true },
-    image: { type: String, required: false },
-    content: { type: String, required: false },
+    post_name: { type: String, required: true },
+    post_title: { type: String, required: true },
+    post_type: {type: String, required: true},
+    post_image: { type: String, required: false },
+    post_content: { type: String, required: false },
     
   },
   { timestamps: true }
