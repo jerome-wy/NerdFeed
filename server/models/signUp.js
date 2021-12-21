@@ -7,7 +7,6 @@ const SignUp = new Schema(
     email: { type: String, required: true },
     password: {type: String, required: true},
     confirm_password: {type: String, required: true},
-    likes: {type: Array, required: false},
     github: {type: String, required: false},
     website: {type: String, required: false}
     
