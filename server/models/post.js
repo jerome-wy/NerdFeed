@@ -8,7 +8,7 @@ const AllPosts = new Schema(
     post_type: {type: String, required: true},
     post_image: { type: String, required: false },
     post_content: { type: String, required: false },
-    
+    post_likes: {type: Number, required: false},
   },
   { timestamps: true }
 );
