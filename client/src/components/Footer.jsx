@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
+	return <div className="Footer_container"></div>;
+};
 
-    return(
-        <div className="Footer_container">
-        
-        </div>
-    )
-}
-
-export default Sidebar
+export default Sidebar;

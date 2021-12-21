@@ -1,148 +1,102 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer } from "react";
 
-const SignUp = (props) => {
-  // Add and initialize state for your form. Your state should include username, password, passwordConfirm, and valid properties.
-  const iState = {
-    username: '',
-    password: '',
-    passwordConfirm: '',
-    valid: false,
-    displayedMessage: '',
-    passwordLength: false
-  };
+const SignUp = () => {
+	const [input, setInput] = useState({
+		name: "",
+		email: "",
+		password: "",
+		confirm_password: "",
+		github: "",
+		website: "",
+	});
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case 'username':
-        return { ...state, username: action.payload };
+	// const handleChange = (e) => {};
 
-      case 'password':
-        return { ...state, password: action.payload };
+	// const handleClick = (e) => {
+	// 	e.preventDefault();
+	// };
 
-      case 'passwordConfirm':
-        return { ...state, passwordConfirm: action.payload };
+	return (
+		<div className="newPost_container">
+			<form>
+				<img
+					src="https://i.imgur.com/UVcHl0f.png"
+					alt="Join the Dark Side!"
+					width="500px"
+				/>
 
-      // case 'password_length':
-      //   return password.value.length > 7
-      //     ? {
-      //         ...state,
-      //         passwordLength: true,
-      //         displayedMessage: 'Password meets requirements.'
-      //       }
-      //     : {
-      //         ...state,
-      //         passwordLength: false,
-      //         type: 'valid',
-      //         displayedMessage: 'Password must be 7 characters'
-      //       };
+				<div className="signInInput_Title">
+					<span className="signInKey">User Name:</span>
+					<input
+						name="username"
+						className="signInForms"
+						type="text"
+						// value={input.name}
+						placeholder="Please enter a user name"
+					/>
+				</div>
 
-    //   case 'valid':
-    //     return password.value === passwordConfirm.value
-    //       ? {
-    //           ...state,
-    //           valid: true,
-    //           displayedMessage: 'You are signed in.'
-    //         }
-    //       : {
-    //           ...state,
-    //           valid: false,
-    //           displayedMessage: 'Your passwords do not match.'
-    //         };
+				<div className="signInInput">
+					<span className="signInKey">Email:</span>
+					<input
+						name="email"
+						className="signInForms"
+						type="text"
+						// value={input.email}
+						placeholder="Please enter an email address"
+					/>
+				</div>
 
-      case 'clear_message':
-        return {
-          ...state,
-          username: '',
-          password: '',
-          passwordConfirm: '',
-          valid: false,
-          displayedMessage: ''
-        };
+				<div className="signInInput">
+					<span className="signInKey">Password:</span>
+					<input
+						name="password"
+						className="signInForms"
+						type="text"
+						// value={input.password}
+						placeholder="Please enter a password"
+					/>
+				</div>
 
-      default:
-        return state;
-    }
-  };
+				<div className="signInInput">
+					<span className="signInKey">Confirm Password:</span>
+					<input
+						name="confirmPassword"
+						className="signInForms"
+						type="text"
+						// value={input.confirm_password}
+						placeholder="Please confirm your password"
+					/>
+				</div>
 
-  // function validPassword() {
-  //   dispatch({ type: 'valid' });
-  // }
+				<div className="signInInput">
+					<span className="signInKey">GitHub:</span>
+					<input
+						name="github"
+						className="signInForms"
+						type="text"
+						// value={input.github}
+						placeholder="GitHub URL"
+					/>
+				</div>
 
-  const [state, dispatch] = useReducer(reducer, iState);
+				<div className="signInInput">
+					<span className="signInKey">Website:</span>
+					<input
+						name="website"
+						className="signInForms"
+						type="text"
+						// value={input.website}
+						placeholder="If you have a website/portfolio, enter the URL here!"
+					/>
+				</div>
 
-  const submitMessage = (e) => {
-    e.preventDefault();
-    dispatch({ type: 'valid' });
-  };
-
-  const clearMessage = (e) => {
-    // e.preventDefault();
-    dispatch({ type: 'clear_message' });
-  };
-
-  return (
-    <div className="SignUp_container">
-        
-
-      {/*Add a method for handling each input's onChange event.*/}
-
-      <form onSubmit={submitMessage}>
-
-      <h1>Let's get to know each other</h1>
-        {/*USERNAME INPUT*/}
-        <input
-        className=""
-          type="text"
-          placeholder="Username"
-          id="username"
-          value={state.username}
-          onChange={(e) =>
-            dispatch({ type: 'username', payload: e.target.value })
-          }
-        />
-        <label htmlFor="username">Username</label>
-
-        {/*PASSWORD INPUT*/}
-        <input
-         className="signUpForm"
-          type="password"
-          placeholder="Password"
-          id="password"
-          value={state.password}
-          onChange={(e) =>
-            dispatch({
-              type: 'password',
-              payload: e.target.value
-            })
-          }
-        />
-        <label htmlFor="password">Password</label>
-
-        {/* CONFIRM PASSWORD INPUT */}
-        <input
-         className="signUpForm"
-          type="password"
-          placeholder="Confirm password"
-          id="passwordConfirm"
-          value={state.passwordConfirm}
-          onChange={(e) =>
-            dispatch({
-              type: 'passwordConfirm',
-              payload: e.target.value
-            })
-          }
-        />
-        <label htmlFor="passwordConfirm">Confirm password</label>
-
-        {/*SUBMIT BUTTON & PW MUST MATCH MSG */}
-        <button type="submit">Sign Up</button>
-        <button className="cancel" type="button" onClick={clearMessage}>
-          Cancel
-        </button>
-        <p>{state.displayedMessage}</p>
-      </form>
-    </div>
-  );
+				<div className="signUpBtn_container">
+					<button className="writePostBtn">Create Account</button>
+				</div>
+			</form>
+		</div>
+	);
 };
 
 export default SignUp;

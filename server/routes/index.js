@@ -1,16 +1,12 @@
-const { Router } = require('express');
-const controllers = require('../controllers/index');
+const { Router } = require("express");
+const controllers = require("../controllers/index");
 const router = Router();
 
-// TEST GET TO CONFIRM CONNECTION
-// router.get('/', (request, response) => response.send('This is root!'));
-
-// POSTS PAGE TO VIEW ALL POSTS/NEWS FEED
-router.get('/posts', controllers.getAllPosts);
-
+// GETS ALL POSTS
+router.get("/posts", controllers.getAllPosts);
+router.post("/posts", controllers.createPost);
 
 // ALL COMMENTS IN GENERAL
-router.get('/comments', controllers.getAllComments);
-
+router.get("/comments", controllers.getAllComments);
 
 module.exports = router;

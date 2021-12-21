@@ -7,123 +7,346 @@
   }
 } */
 
-
 :root {
-  --color1: #0e465d;
-  --color2: #086947;
+	--color1: rgb(14, 70, 93);
+	--color2: rgb(8, 105, 71);
+	--commentsColor1: rgb(174, 199, 211);
+	--commentsColor2: rgb(201, 236, 224);
 }
 
 body {
-  font-family: 'Bakbak One', cursive;
 }
 
 .Header_container {
-  display: flex;
-  background-color: var(--color1);
-  justify-content: space-between;
-  height: 60px;
+	display: flex;
+	background-color: rgb(120, 170, 190);
+	justify-content: space-between;
+	height: 60px;
 }
 
 .navItems {
-  display: inline;
-  list-style: none;
-  text-decoration: none;
-  padding: 20px;
-  color: white;
+	display: inline;
+	list-style: none;
+	text-decoration: none;
+	padding: 20px;
+	color: white;
+	font-family: "Bebas Neue", cursive;
+	font-size: 24px;
 }
 
-a{
-  color: white;
-  text-decoration: none;
+a {
+	color: white;
+	text-decoration: none;
 }
 
-a:hover{
-  color: black;
-  transition: 0.5s;
-  text-decoration: underline;
+a:hover {
+	color: black;
+	transition: 0.5s;
+	text-decoration: underline;
 }
 
 .Buttons_container {
-  left: 600px;
-  display: flex;
-  justify-content: right;
+	left: 600px;
+	display: flex;
+	justify-content: right;
 }
 
 button {
-  font-family: 'Bakbak One', cursive;
-  margin-right: 30px;
+	margin-right: 30px;
 }
 
 .signUpBtn:hover {
-  background-color: var(--color2);
-  transition: 0.5s
-  
+	background-color: var(--color2);
+	transition: 0.5s;
 }
 
 .signInBtn:hover {
-  background-color: lightseagreen;
-  transition: 0.5s
-  
+	background-color: lightseagreen;
+	transition: 0.5s;
 }
 .signUpBtn {
-  background-color: lightslategray;
-  height: 35px;
-  width: 120px;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  margin-top: 12px;
+	background-color: lightslategray;
+	height: 35px;
+	width: 120px;
+	border: none;
+	border-radius: 25px;
+	color: white;
+	margin-top: 12px;
+	font-family: "Bebas Neue", cursive;
+	font-size: 20px;
 }
 
 .signInBtn {
-  background-color: var(--color2);
-  height: 20px;
-  width: 80px;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  margin-top: 20px;
+	background-color: var(--color2);
+	height: 25px;
+	width: 80px;
+	border: none;
+	border-radius: 25px;
+	color: white;
+	margin-top: 20px;
+	font-family: "Bebas Neue", cursive;
+	font-size: 20px;
 }
 
 .form {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 20px;
-  width: 400px;
-  margin-top: 100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 20px;
+	width: 400px;
+	margin-top: 100px;
 }
 
 .inputForms {
-  box-sizing: border-box;
-  width: 300px;
-  height: 45px;
-  border-radius: 10px;
-  box-shadow: 0px -1px 4px lightgray;
-  border: none;
-  margin: 10px;
+	box-sizing: border-box;
+	width: 300px;
+	height: 45px;
+	border-radius: 10px;
+	box-shadow: 0px -1px 4px lightgray;
+	border: none;
+	margin: 10px;
 }
 
 .inputForms::placeholder {
-  padding-left: 15px;
-  color: lightgray;
-  font-size: 20px;
+	padding-left: 15px;
+	color: lightgray;
+	font-size: 20px;
 }
 
 .submit {
-  background-color: var(--color2);
-  width: 290px;
-  height: 45px;
-  border-radius: 10px;
-  margin-left: 15px;
-  border: none;
-  color: white;
-  font-size: 20px;
+	background-color: var(--color2);
+	width: 290px;
+	height: 45px;
+	border-radius: 10px;
+	margin-left: 15px;
+	border: none;
+	color: white;
+	font-size: 20px;
 }
 
 .submit:hover {
-  background-color: #0a553b;
-  transition: 0.5s;
+	background-color: #0a553b;
+	transition: 0.5s;
 }
 
+.newPostContainer {
+	margin: 0 auto;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	width: 600px;
+	padding: 20px;
+	border: solid 1px gray;
+	border-left: none;
+	border-right: none;
+}
+
+.newImagePost {
+	padding-right: 10px;
+	max-height: 300px;
+	max-width: 200px;
+}
+
+.postsBtn {
+	background-color: var(--color1);
+	height: 30px;
+	width: 100px;
+	border: none;
+	border-radius: 5px 18px;
+	color: white;
+}
+
+.postsBtn:hover {
+	background-color: var(--color2);
+	transition: 0.5s;
+}
+
+h2 {
+	margin: 0;
+	color: var(--color1);
+	font-family: "Bebas Neue", cursive;
+	font-size: 36px;
+}
+
+.h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.commentsContainer {
+	margin: 0 auto;
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 600px;
+	padding: 20px;
+	border: solid 1px lightgray;
+	border-radius: 15px;
+}
+
+.commentName {
+	font-family: "Bebas Neue", cursive;
+	font-size: 20px;
+}
+
+.commentContent {
+	background-color: #eeeeee;
+	margin-top: 0;
+	margin-left: 12px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 4px 5px #dddddd;
+}
+
+.commentBtnsDiv {
+	margin-left: 400px;
+	margin-top: 10px;
+	flex-direction: flex-end;
+}
+
+.commentsBtn {
+	border: none;
+	border-radius: 5px 10px;
+	height: 30px;
+}
+
+.commentsBtn:hover {
+	background-color: var(--commentsColor2);
+	transition: 0.5s;
+}
+
+.postsContent {
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.likesTotal {
+	color: var(--color2);
+	margin: 18px;
+}
+
+.About_container {
+	margin: 0 auto;
+	width: 800px;
+}
+
+.aboutPictureDiv {
+	text-align: center;
+}
+
+.aboutPicture {
+	margin-top: 20px;
+	border-radius: 100px;
+	align-content: center;
+	box-shadow: 2px 3px lightgray;
+}
+
+.newPost_container {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: center;
+	margin: 0 auto;
+	width: 800px;
+	text-align: center;
+	border: solid 1px lightgray;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+.postInput {
+	width: 400px;
+	height: 100px;
+	border: solid 1px lightgray;
+	box-shadow: 2px 3px lightgray;
+	margin-bottom: 20px;
+}
+
+.newPostInput_Title {
+	display: flex;
+	text-align: right;
+	padding-top: 30px;
+	/* border: solid 1px black; */
+}
+
+.newPostInput {
+	display: flex;
+	text-align: right;
+	padding-top: 10px;
+	/* border: solid 1px black; */
+}
+
+.newPostKey {
+	margin-right: 10px;
+	color: var(--color1);
+	font-family: "Bebas Neue", cursive;
+	font-size: 26px;
+	padding: 5px;
+	/* border: solid 1px black; */
+	width: 50px;
+	text-align: right;
+}
+
+.postForms {
+	width: 400px;
+	height: 30px;
+	border: solid 1px lightgray;
+	box-shadow: 2px 3px lightgray;
+}
+
+.writePostBtn {
+	background-color: var(--color2);
+	width: 200px;
+	height: 45px;
+	border-radius: 10px;
+	margin-left: 15px;
+	border: none;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.writePostBtn:hover {
+	background-color: #0a553b;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.signInInput_Title {
+	display: flex;
+	text-align: right;
+	padding-top: 30px;
+	/* border: solid 1px black; */
+}
+
+.signInInput {
+	display: flex;
+	text-align: right;
+	padding-top: 10px;
+	/* border: solid 1px black; */
+}
+
+.signInKey {
+	margin-right: 10px;
+	color: var(--color1);
+	font-family: "Bebas Neue", cursive;
+	font-size: 26px;
+	padding: 5px;
+	/* border: solid 1px black; */
+	width: 200px;
+	text-align: right;
+}
+
+.signInForms {
+	width: 400px;
+	height: 30px;
+	border: solid 1px lightgray;
+	box-shadow: 2px 3px lightgray;
+}
+
+#deleteBtn {
+	background-color: rgb(160, 113, 113);
+	width: 60px;
+}
