@@ -21,15 +21,25 @@ const NewPost = (props) => {
 			type: post.type,
 			image: post.image,
 			content: post.content,
-			likes: post.likes,
+			likes: 0,
 		};
-		axios.post("http://localhost:3001/posts", { newPost });
-		setPost(newPost);
+		axios.post("http://localhost:3001/posts", newPost);
+		console.log(newPost);
+	};
+
+	const handleChangeNewPost = (e) => {
+		const { name, value } = e.target;
+		setPost((post) => {
+			return {
+				...post,
+				[name]: value,
+			};
+		});
 	};
 
 	return (
 		<div className="newPost_container">
-			<form onSubmit={submitPost}>
+			<form>
 				<img
 					src="https://i.imgur.com/CFjickq.png"
 					alt="Write a Post!"
@@ -42,6 +52,9 @@ const NewPost = (props) => {
 						className="postForms"
 						type="text"
 						placeholder="Title of Post"
+						name="title"
+						value={post.title}
+						onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -51,6 +64,9 @@ const NewPost = (props) => {
 						className="postForms"
 						type="text"
 						placeholder="Movie Review, Game Review, Question, etc ..."
+						name="type"
+						value={post.type}
+						onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -60,6 +76,9 @@ const NewPost = (props) => {
 						className="postForms"
 						type="text"
 						placeholder="Please paste in the image URL here ..."
+						name="image"
+						value={post.image}
+						onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -69,11 +88,16 @@ const NewPost = (props) => {
 						className="postInput"
 						type="text"
 						placeholder="Write a post ..."
+						name="content"
+						value={post.content}
+						onChange={handleChangeNewPost}
 					/>
 				</div>
 
 				<div className="writePostBtns_container">
-					<button className="writePostBtn">Submit Post</button>
+					<button className="writePostBtn" type="submit" onClick={submitPost}>
+						Submit Post
+					</button>
 				</div>
 			</form>
 		</div>

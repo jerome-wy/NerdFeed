@@ -18,14 +18,14 @@ function App() {
 	const getPosts = async () => {
 		const res = await axios.get("http://localhost:3001/posts");
 		const postsResponse = res.data;
-		// console.log('Here are the posts: ', postsResponse.posts)
+		console.log("Here are the posts: ", postsResponse.posts);
 		setPost(postsResponse.posts);
 	};
 
 	const getComments = async () => {
 		const res = await axios.get("http://localhost:3001/comments");
 		const commentsResponse = res.data;
-		// console.log('Here are the comments: ', commentsResponse.comments)
+		console.log("Here are the comments: ", commentsResponse.comments);
 		setComment(commentsResponse.comments);
 	};
 
@@ -39,7 +39,7 @@ function App() {
 			<Header />
 			<Route
 				exact
-				path="/"
+				path="/Home"
 				component={(props) => (
 					<Home {...props} posts={post} comments={comment} />
 				)}

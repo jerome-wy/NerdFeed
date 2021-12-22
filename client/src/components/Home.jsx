@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-const Home = ({ posts }) => {
+const Home = ({ posts, comments }) => {
 	const [likePost, setLikePost] = useState(0);
 	const [comment, setComment] = useState("");
 
 	const likedPost = (posts) => {
 		setLikePost(likePost + 1);
 	};
+
+	console.log(posts);
 
 	return (
 		<div className="postsContainer">

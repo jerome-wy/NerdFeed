@@ -1,14 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const postsSchema = require("./post");
+const commentsSchema = require("./comment");
 
-// VARIABLES FOR SCHEMA
-const AllPosts = require('./post');
-const AllComments = require('./comment');
-
-
-const Post = mongoose.model('./post');
-const Comment = mongoose.model('./comment');
+const Post = mongoose.model("allPosts", postsSchema);
+const Comment = mongoose.model("allComments", commentsSchema);
 
 module.exports = {
-  Post,
-  Comment
+	Post,
+	Comment,
 };
