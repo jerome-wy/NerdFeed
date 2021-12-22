@@ -13,23 +13,19 @@ const Home = ({ posts, comments }) => {
 	return (
 		<div className="postsContainer">
 			{posts.map((post) => (
-				<div className="newPostContainer">
-					<img
-						src={post.post_image}
-						alt={post.title}
-						className="newImagePost"
-					/>
+				<div className="newPostContainer" key={post._id}>
+					<img src={post.image} alt={post.title} className="newImagePost" />
 
 					<p className="newPostParagraph">
-						<h2>{post.post_title}</h2>
+						<h2>{post.title}</h2>
 
 						<div className="postsName">
-							<b>Posted by:</b> {post.post_name}
+							<b>Posted by:</b> {post.name}
 							<br />
-							<i>{post.post_type}</i>
+							<i>{post.type}</i>
 						</div>
 
-						<div className="postsContent">{post.post_content}</div>
+						<div className="postsContent">{post.content}</div>
 
 						<br />
 						<br />
@@ -56,9 +52,9 @@ const Home = ({ posts, comments }) => {
 				</div>
 			))}
 
-			{/* <div className="commentsContainer">
-				<div className="commentName">Posted by: {comments.comment_name}</div>
-				<div className="commentContent">{comments.comment_content}</div>
+			<div className="commentsContainer">
+				<div className="commentName">Posted by: {comments.name}</div>
+				<div className="commentContent">{comments.content}</div>
 
 				<div className="commentBtnsDiv">
 					<button className="commentsBtn" id="likeBtn">
@@ -68,7 +64,7 @@ const Home = ({ posts, comments }) => {
 						Comment
 					</button>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

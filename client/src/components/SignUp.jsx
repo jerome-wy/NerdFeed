@@ -1,7 +1,8 @@
 import React, { useState, useReducer } from "react";
+import axios from "axios";
 
 const SignUp = () => {
-	const [input, setInput] = useState({
+	const [user, setUser] = useState({
 		name: "",
 		email: "",
 		password: "",
@@ -10,11 +11,30 @@ const SignUp = () => {
 		website: "",
 	});
 
-	// const handleChange = (e) => {};
+	const createUser = (e) => {
+		e.preventDefault();
+		const newUser = {
+			name: user.name,
+			email: user.email,
+			password: user.password,
+			confirm_password: user.confirm_password,
+			github: user.github,
+			website: user.website,
+		};
+		axios.post("http://localhost:3001/users", newUser);
+		console.log(newUser);
+		window.location.reload();
+	};
 
-	// const handleClick = (e) => {
-	// 	e.preventDefault();
-	// };
+	const handleChangeNewUser = (e) => {
+		const { name, value } = e.target;
+		setUser((user) => {
+			return {
+				...user,
+				[name]: value,
+			};
+		});
+	};
 
 	return (
 		<div className="newPost_container">
@@ -31,8 +51,10 @@ const SignUp = () => {
 						name="username"
 						className="signInForms"
 						type="text"
-						// value={input.name}
+						name="name"
+						value={user.name}
 						placeholder="Please enter a user name"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
@@ -42,8 +64,10 @@ const SignUp = () => {
 						name="email"
 						className="signInForms"
 						type="text"
-						// value={input.email}
+						name="email"
+						value={user.email}
 						placeholder="Please enter an email address"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
@@ -52,9 +76,11 @@ const SignUp = () => {
 					<input
 						name="password"
 						className="signInForms"
-						type="text"
-						// value={input.password}
+						type="password"
+						name="password"
+						value={user.password}
 						placeholder="Please enter a password"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
@@ -63,9 +89,11 @@ const SignUp = () => {
 					<input
 						name="confirmPassword"
 						className="signInForms"
-						type="text"
-						// value={input.confirm_password}
+						type="password"
+						name="confirm_password"
+						value={user.confirm_password}
 						placeholder="Please confirm your password"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
@@ -75,8 +103,10 @@ const SignUp = () => {
 						name="github"
 						className="signInForms"
 						type="text"
-						// value={input.github}
+						name="github"
+						value={user.github}
 						placeholder="GitHub URL"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
@@ -86,13 +116,17 @@ const SignUp = () => {
 						name="website"
 						className="signInForms"
 						type="text"
-						// value={input.website}
+						name="website"
+						value={user.website}
 						placeholder="If you have a website/portfolio, enter the URL here!"
+						onChange={handleChangeNewUser}
 					/>
 				</div>
 
 				<div className="signUpBtn_container">
-					<button className="writePostBtn">Create Account</button>
+					<button className="writePostBtn" type="submit" onClick={createUser}>
+						Create Account
+					</button>
 				</div>
 			</form>
 		</div>

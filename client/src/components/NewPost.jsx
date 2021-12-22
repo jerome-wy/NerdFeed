@@ -25,6 +25,7 @@ const NewPost = (props) => {
 		};
 		axios.post("http://localhost:3001/posts", newPost);
 		console.log(newPost);
+		window.location.reload();
 	};
 
 	const handleChangeNewPost = (e) => {
@@ -47,6 +48,18 @@ const NewPost = (props) => {
 				/>
 
 				<div className="newPostInput_Title">
+					<span className="newPostKey">Name:</span>
+					<input
+						className="postForms"
+						type="text"
+						placeholder="Enter your name here"
+						name="name"
+						value={post.name}
+						onChange={handleChangeNewPost}
+					/>
+				</div>
+
+				<div className="newPostInput">
 					<span className="newPostKey">Title:</span>
 					<input
 						className="postForms"
