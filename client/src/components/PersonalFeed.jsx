@@ -1,6 +1,6 @@
 import React from "react";
 
-const PersonalFeed = () => {
+const PersonalFeed = (props) => {
 	return <div className="PersonalFeed_container"></div>;
 };
 

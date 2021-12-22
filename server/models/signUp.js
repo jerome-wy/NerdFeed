@@ -9,6 +9,7 @@ const SignUp = new Schema(
 		confirm_password: { type: String, required: true },
 		github: { type: String, required: false },
 		website: { type: String, required: false },
+		avatar: { type: String, required: false },
 	},
 	{ timestamps: true }
 );

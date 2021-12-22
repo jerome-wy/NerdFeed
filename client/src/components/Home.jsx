@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Home = ({ props, posts, comments }) => {
+const Home = (props) => {
 	const [likePost, setLikePost] = useState(0);
 	const [comment, setComment] = useState("");
 	const [showComments, setShowComments] = useState(false);
@@ -10,7 +10,7 @@ const Home = ({ props, posts, comments }) => {
 		setLikePost(likePost + 1);
 	};
 
-	console.log(posts);
+	console.log(props, "hello");
 
 	const updatePost = async (req, res) => {
 		axios.put(`http://localhost:3001/posts/`);
@@ -18,6 +18,7 @@ const Home = ({ props, posts, comments }) => {
 
 	//how do i pass the parameters here??
 	const deletePost = (e, id) => {
+		console.log(id);
 		e.preventDefault();
 		axios.delete(`http://localhost:3001/posts/${e.target.id}`);
 	};
@@ -26,7 +27,7 @@ const Home = ({ props, posts, comments }) => {
 
 	return (
 		<div className="postsContainer">
-			{posts.map((post) => (
+			{props.posts.map((post) => (
 				<div className="newPostContainer" key={post._id}>
 					<img src={post.image} alt={post.title} className="newImagePost" />
 					<br />
@@ -65,7 +66,7 @@ const Home = ({ props, posts, comments }) => {
 					</div>
 				</div>
 			))}
-
+			{/* 
 			<div className="commentsContainer">
 				<div className="commentName">Posted by: {comments.name}</div>
 
@@ -83,7 +84,7 @@ const Home = ({ props, posts, comments }) => {
 						Comment
 					</button>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

@@ -9,6 +9,7 @@ const SignUp = () => {
 		confirm_password: "",
 		github: "",
 		website: "",
+		avatar: "",
 	});
 
 	const createUser = (e) => {
@@ -20,6 +21,7 @@ const SignUp = () => {
 			confirm_password: user.confirm_password,
 			github: user.github,
 			website: user.website,
+			avatar: user.avatar,
 		};
 		axios.post("http://localhost:3001/users", newUser);
 		console.log(newUser);
@@ -48,7 +50,6 @@ const SignUp = () => {
 				<div className="signInInput_Title">
 					<span className="signInKey">User Name:</span>
 					<input
-						name="username"
 						className="signInForms"
 						type="text"
 						name="name"
@@ -61,7 +62,6 @@ const SignUp = () => {
 				<div className="signInInput">
 					<span className="signInKey">Email:</span>
 					<input
-						name="email"
 						className="signInForms"
 						type="text"
 						name="email"
@@ -74,7 +74,6 @@ const SignUp = () => {
 				<div className="signInInput">
 					<span className="signInKey">Password:</span>
 					<input
-						name="password"
 						className="signInForms"
 						type="password"
 						name="password"
@@ -87,7 +86,6 @@ const SignUp = () => {
 				<div className="signInInput">
 					<span className="signInKey">Confirm Password:</span>
 					<input
-						name="confirmPassword"
 						className="signInForms"
 						type="password"
 						name="confirm_password"
@@ -100,7 +98,6 @@ const SignUp = () => {
 				<div className="signInInput">
 					<span className="signInKey">GitHub:</span>
 					<input
-						name="github"
 						className="signInForms"
 						type="text"
 						name="github"
@@ -113,12 +110,24 @@ const SignUp = () => {
 				<div className="signInInput">
 					<span className="signInKey">Website:</span>
 					<input
-						name="website"
 						className="signInForms"
 						type="text"
 						name="website"
 						value={user.website}
 						placeholder="If you have a website/portfolio, enter the URL here!"
+						onChange={handleChangeNewUser}
+					/>
+				</div>
+
+				<div className="signInInput">
+					<span className="signInKey">Avatar/Profile Pic:</span>
+					<input
+						name=""
+						className="signInForms"
+						type="text"
+						name="website"
+						value={user.website}
+						placeholder="Copy & Paste picture URL here"
 						onChange={handleChangeNewUser}
 					/>
 				</div>
