@@ -103,8 +103,11 @@ const SignIn = (props) => {
 				<p>
 					<b>{state.displayedMessage}</b>
 				</p>
-
-				<p className="forgotPassword">Forgot password?</p>
+				<p className="forgotPassword">
+					<Link to="/SignUp">Not registered? Create an account!</Link>
+					<br />
+					Forgot password?
+				</p>
 			</form>
 		</div>
 	);

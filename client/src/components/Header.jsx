@@ -6,6 +6,10 @@ const Header = () => {
 	return (
 		<div className="Header_container">
 			<div className="Nav_container">
+				<Link to="/">
+					<img src="https://i.imgur.com/90aRLml.png" alt="NerdFeed" />
+				</Link>
+
 				<nav className="navBar">
 					<ul className="navList">
 						<li className="navItems">
@@ -20,11 +24,7 @@ const Header = () => {
 					</ul>
 				</nav>
 			</div>
-			<div className="homeBanner">
-				<Link to="/">
-					<img src="https://i.imgur.com/90aRLml.png" alt="NerdFeed" />
-				</Link>
-			</div>
+
 			<div className="Buttons_container">
 				<div className="newPostBtn_container">
 					<Link to="/NewPost">

@@ -18,12 +18,18 @@ body {
 }
 
 .Header_container {
+	margin: 0 auto;
 	display: flex;
+	flex-wrap: wrap;
 	background-color: rgb(120, 170, 190);
-	justify-content: space-around;
+	justify-content: space-evenly;
 	height: 60px;
+	border: solid 1px black;
 }
 
+.Nav_container {
+	display: flex;
+}
 .navItems {
 	display: inline;
 	list-style: none;
@@ -132,14 +138,13 @@ button {
 
 .newPostContainer {
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 25px;
 	display: flex;
 	justify-content: space-evenly;
 	width: 800px;
-	padding: 20px;
-	border: solid 1px gray;
-	border-left: none;
-	border-right: none;
+	padding: 10px;
+	border: solid 1px lightgray;
+	border-radius: 20px;
 }
 
 .newImagePost {
@@ -184,6 +189,7 @@ h2 {
 	padding: 20px;
 	border: solid 1px lightgray;
 	border-radius: 15px;
+	display: none;
 }
 
 .commentName {
@@ -224,7 +230,6 @@ h2 {
 
 .likesTotal {
 	color: var(--color2);
-	margin: 18px;
 }
 
 .About_container {
@@ -444,4 +449,12 @@ ul {
 .socialMediaIcons {
 	height: 50px;
 	padding: 20px;
+}
+
+.buttonsDiv {
+	text-align: right;
+}
+
+.forgotPassword a {
+	color: var(--color2);
 }

@@ -8,6 +8,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Sidebar from "./components/Sidebar";
 import NewPost from "./components/NewPost";
+import NewComment from "./components/NewComment";
 import axios from "axios";
 import "./App.css";
 
@@ -51,16 +52,16 @@ function App() {
 			<Route exact path="/Sidebar" component={Sidebar} />
 			<Route
 				exact
+				path="/NewComment"
+				render={(props) => (
+					<NewComment {...props} posts={post} comments={comment} />
+				)}
+			/>
+			<Route
+				exact
 				path="/NewPost"
 				render={(props) => (
-					<NewPost
-						{...props}
-						posts={post}
-						comments={comment}
-						// handleChange={handleChange}
-						// submitPost={submitPost}
-						// addPost={addPost}
-					/>
+					<NewPost {...props} posts={post} comments={comment} />
 				)}
 			/>
 		</div>
