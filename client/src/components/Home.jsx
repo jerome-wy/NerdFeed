@@ -16,7 +16,7 @@ const Home = ({ posts, comments }) => {
 	};
 	//how do i pass the parameters here??
 	const deletePost = async (req, res) => {
-		axios.delete(`http://localhost:3001/posts/${req._id}}`);
+		axios.delete(`http://localhost:3001/posts/${req.id}}`);
 	};
 
 	const clickComment = () => {};
