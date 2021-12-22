@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp";
 import Sidebar from "./components/Sidebar";
 import NewPost from "./components/NewPost";
 import NewComment from "./components/NewComment";
+import PersonalFeed from "./components/PersonalFeed";
 import axios from "axios";
 import "./App.css";
 
@@ -49,6 +50,7 @@ function App() {
 			<Route exact path="/References" component={References} />
 			<Route exact path="/SignIn" component={SignIn} />
 			<Route exact path="/SignUp" component={SignUp} />
+			<Route exact path="/PersonalFeed" component={PersonalFeed} />
 			<Route exact path="/Sidebar" component={Sidebar} />
 			<Route
 				exact

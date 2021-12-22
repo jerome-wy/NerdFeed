@@ -95,7 +95,7 @@ const SignIn = (props) => {
 				/>
 
 				{/*SUBMIT BUTTON & PW MUST MATCH MSG */}
-				<Link to="/Home">
+				<Link to="/PersonalFeed">
 					<button className="submit" type="submit">
 						Sign In
 					</button>

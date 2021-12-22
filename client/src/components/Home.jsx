@@ -15,9 +15,11 @@ const Home = ({ props, posts, comments }) => {
 	const updatePost = async (req, res) => {
 		axios.put(`http://localhost:3001/posts/`);
 	};
+
 	//how do i pass the parameters here??
-	const deletePost = async (req, res, posts) => {
-		axios.delete(`http://localhost:3001/posts/${posts._id}}`);
+	const deletePost = (e, id) => {
+		e.preventDefault();
+		axios.delete(`http://localhost:3001/posts/${e.target.id}`);
 	};
 
 	const clickComment = () => {};

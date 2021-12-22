@@ -4,4 +4,4 @@ const PersonalFeed = () => {
 	return <div className="PersonalFeed_container"></div>;
 };
 
-export default Sidebar;
+export default PersonalFeed;
