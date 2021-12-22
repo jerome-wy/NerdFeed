@@ -20,7 +20,7 @@ body {
 .Header_container {
 	display: flex;
 	background-color: rgb(120, 170, 190);
-	justify-content: space-between;
+	justify-content: space-around;
 	height: 60px;
 }
 
@@ -135,7 +135,7 @@ button {
 	margin-top: 50px;
 	display: flex;
 	justify-content: space-evenly;
-	width: 600px;
+	width: 800px;
 	padding: 20px;
 	border: solid 1px gray;
 	border-left: none;
@@ -167,6 +167,7 @@ h2 {
 	color: var(--color1);
 	font-family: "Bebas Neue", cursive;
 	font-size: 36px;
+	padding-top: 20px;
 }
 
 .h3 {
@@ -227,8 +228,11 @@ h2 {
 }
 
 .About_container {
-	margin: 0 auto;
-	width: 800px;
+	margin: 20px auto;
+	width: 780px;
+	border: solid 1px lightgray;
+	border-radius: 20px;
+	padding: 20px;
 }
 
 .aboutPictureDiv {
@@ -349,4 +353,95 @@ h2 {
 #deleteBtn {
 	background-color: rgb(160, 113, 113);
 	width: 60px;
+}
+
+.References_container {
+	margin: 20px auto;
+	width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+.referenceName {
+	margin: 0 auto;
+	align-items: center;
+	text-align: center;
+	padding-right: 20px;
+}
+
+.referenceContent {
+	display: flex;
+	/* flex-wrap: wrap; */
+	text-align: center;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px lightgray;
+	border-radius: 20px;
+	width: 800px;
+}
+
+.instructorImages {
+	border-radius: 100px;
+	margin: 20px;
+	width: 200px;
+	box-shadow: 2px 2px lightgray;
+}
+
+.instructors {
+	padding-bottom: 20px;
+}
+
+.referenceH2 {
+	width: 800px;
+}
+
+.referenceContent_websites {
+	display: flex;
+	/* flex-wrap: wrap; */
+	text-align: center;
+	/* margin: 0 auto; */
+	justify-content: center;
+	align-items: center;
+	border: solid 1px lightgray;
+	border-radius: 20px;
+	width: 800px;
+	margin-bottom: 15px;
+}
+
+li {
+	text-align: left;
+}
+
+h3 {
+	width: 200px;
+}
+
+ul {
+	width: 500px;
+}
+
+.referenceName_websites {
+	margin-top: 20px;
+	align-items: center;
+	text-align: center;
+	padding-right: 20px;
+}
+
+.referenceLinks {
+	color: black;
+	text-decoration: none;
+}
+
+.referenceLinks:hover {
+	color: var(--color1);
+	transition: 0.1s;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.socialMediaIcons {
+	height: 50px;
+	padding: 20px;
 }

@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const commentsSchema = new Schema(
+const Comment = new Schema(
 	{
-		name: { type: String, required: true },
+		name: { type: String, required: false },
 		image: { type: String, required: false },
 		content: { type: String, required: false },
 	},
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model("allComments", commentsSchema);
+module.exports = mongoose.model("allComments", Comment);

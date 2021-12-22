@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
-const postsSchema = require("./post");
-const commentsSchema = require("./comment");
+const Post = require("./post");
+const Comment = require("./comment");
+const SignUp = require("./signUp");
 
-const Post = mongoose.model("allPosts", postsSchema);
-const Comment = mongoose.model("allComments", commentsSchema);
+const Post = mongoose.model("allPosts", Post);
+const Comment = mongoose.model("allComments", Comment);
+const SignUp = mongoose.model("allComments", SignUp);
 
 module.exports = {
 	Post,
 	Comment,
+	SignUp,
 };

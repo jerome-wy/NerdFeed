@@ -1,14 +1,12 @@
 import React, { useState, useReducer } from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = (props) => {
 	// Add and initialize state for your form. Your state should include username, password, passwordConfirm, and valid properties.
 	const iState = {
 		username: "",
 		password: "",
-		passwordConfirm: "",
-		valid: false,
 		displayedMessage: "",
-		passwordLength: false,
 	};
 
 	const reducer = (state, action) => {
@@ -19,35 +17,11 @@ const SignIn = (props) => {
 			case "password":
 				return { ...state, password: action.payload };
 
-			case "passwordConfirm":
-				return { ...state, passwordConfirm: action.payload };
-
-			// case 'password_length':
-			//   return password.value.length > 7
-			//     ? {
-			//         ...state,
-			//         passwordLength: true,
-			//         displayedMessage: 'Password meets requirements.'
-			//       }
-			//     : {
-			//         ...state,
-			//         passwordLength: false,
-			//         type: 'valid',
-			//         displayedMessage: 'Password must be 7 characters'
-			//       };
-
-			//   case 'valid':
-			//     return password.value === passwordConfirm.value
-			//       ? {
-			//           ...state,
-			//           valid: true,
-			//           displayedMessage: 'You are signed in.'
-			//         }
-			//       : {
-			//           ...state,
-			//           valid: false,
-			//           displayedMessage: 'Your passwords do not match.'
-			//         };
+			case "displayedMessage":
+				return {
+					...state,
+					displayedMessage: "You are now logged in and will be redirected.",
+				};
 
 			case "clear_message":
 				return {
@@ -64,15 +38,15 @@ const SignIn = (props) => {
 		}
 	};
 
-	// function validPassword() {
-	//   dispatch({ type: 'valid' });
-	// }
+	function validPassword() {
+		dispatch({ type: "valid" });
+	}
 
 	const [state, dispatch] = useReducer(reducer, iState);
 
 	const submitMessage = (e) => {
 		e.preventDefault();
-		dispatch({ type: "valid" });
+		dispatch({ type: "displayedMessage" });
 	};
 
 	const clearMessage = (e) => {
@@ -121,10 +95,14 @@ const SignIn = (props) => {
 				/>
 
 				{/*SUBMIT BUTTON & PW MUST MATCH MSG */}
-				<button className="submit" type="submit">
-					Sign In
-				</button>
-				<p>{state.displayedMessage}</p>
+				<Link to="/Home">
+					<button className="submit" type="submit">
+						Sign In
+					</button>
+				</Link>
+				<p>
+					<b>{state.displayedMessage}</b>
+				</p>
 
 				<p className="forgotPassword">Forgot password?</p>
 			</form>

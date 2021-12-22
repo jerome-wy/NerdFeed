@@ -1,5 +1,5 @@
 const db = require("../db/index");
-const postsSchema = require("../models/post");
+const Post = require("../models/post");
 
 // Connect to the database
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -48,7 +48,7 @@ const main = async () => {
 		},
 	];
 
-	await postsSchema.insertMany(allPosts);
+	await Posts.insertMany(allPosts);
 	console.log("Created a post using seed/allPosts.js!");
 };
 

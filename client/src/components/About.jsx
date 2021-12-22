@@ -6,14 +6,40 @@ const About = () => {
 		<div className="About_container">
 			<div className="aboutPictureDiv">
 				<img
+					src="https://i.imgur.com/VcEi7IE.png"
+					className="aboutBanner"
+					width="550px"
+				/>
+				<br />
+				<img
 					src="https://media-exp1.licdn.com/dms/image/C4D03AQGTizQ-DzBoUA/profile-displayphoto-shrink_200_200/0/1638998388995?e=1645660800&v=beta&t=SuucKfNQgJyRw-Q-cV8An7Bxt0YX4ZQYVXrrRs0tCHc"
 					className="aboutPicture"
 				/>
 				<br />
+				<a href="https://github.com/jerome-wy/NerdFeed">
+					<img
+						src="https://i.imgur.com/H9qtgjT.png"
+						alt="GitHub Respository for this Project"
+						className="socialMediaIcons"
+					/>
+				</a>
+				<a href="https://trello.com/b/QM02MyMf/nerdfeed">
+					<img
+						src="https://i.imgur.com/MHt9Tkk.png"
+						alt="Trello"
+						className="socialMediaIcons"
+					/>
+				</a>
+				<a href="https://www.linkedin.com/in/jerome-wy">
+					<img
+						src="https://i.imgur.com/pTHbXWY.png"
+						alt="LinkedIn"
+						className="socialMediaIcons"
+					/>
+				</a>
 			</div>
 
 			<p className="IntroTechnologies_paragraph">
-				<br />
 				Hello there! Thanks for stopping by! My name is <b>Jerome Wy</b> and I
 				am a Full Stack Developer. This webapp is made from different
 				technologies:

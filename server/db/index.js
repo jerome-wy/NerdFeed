@@ -3,11 +3,7 @@ const env = require("dotenv").config();
 
 mongoose
 	.connect(
-		`mongodb+srv://jerome:generalassembly118@cluster0.wuv3l.mongodb.net/NerdFeedDatabase?retryWrites=true&w=majority`,
-		{
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		}
+		`mongodb+srv://jerome:generalassembly118@cluster0.wuv3l.mongodb.net/NerdFeedDatabase?retryWrites=true&w=majority`
 	)
 	.then(() => {
 		console.log("Successfully connected to MongoDB.");
