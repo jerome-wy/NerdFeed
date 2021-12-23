@@ -29,12 +29,12 @@ const Upcoming = () => {
 					<img src="https://i.imgur.com/XUm7Xs8.png" />
 					<br />
 					As of Dec. 22, 2021, we have not learned about Redux. This feature
-					will be at the top of my list to add.
+					will be at the top of my list to add after that unit is completed!
 				</div>
 
 				<h2>Code Cleanup & Restructure</h2>
 				<div className="upcomingItem">
-					There is a lot of places for improvement in my code base and will be
+					There are a lot of places for improvement in my code base and will be
 					going back to clean it up. I will also be working on getting the App
 					to re-render automatically for certain state changes. Creating a NEW
 					Post as well as DELETING a Post does not automatically re-render upon

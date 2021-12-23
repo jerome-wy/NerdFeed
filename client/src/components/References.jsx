@@ -21,6 +21,7 @@ const References = () => {
 					<b>Michael Lackey</b>
 					<br />
 					Sr. Associate Instructor
+					<br />
 				</div>
 				<div className="instructors">
 					<img

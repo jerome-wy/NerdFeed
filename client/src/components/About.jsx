@@ -42,7 +42,8 @@ const About = () => {
 			<p className="IntroTechnologies_paragraph">
 				Hello there! Thanks for stopping by! My name is <b>Jerome Wy</b> and I
 				am a Full Stack Developer. NerdFeed was created for my very first{" "}
-				<b>MERN</b> Full Stack Project. <br />
+				<b>MERN</b> Full Stack Project while attending General Assembly's
+				Software Engineering Immersive Program. <br />
 			</p>
 
 			<div className="mernInfo_div">
