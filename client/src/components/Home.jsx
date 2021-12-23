@@ -5,7 +5,7 @@ const Home = (props) => {
 	const [likePost, setLikePost] = useState(0);
 	const [comment, setComment] = useState("");
 	const [showComments, setShowComments] = useState(false);
-	const [update, setUpdate] = useState("");
+	const [update, setUpdate] = useState(false);
 
 	const likedPost = (post) => {
 		setLikePost(likePost + 1);
@@ -53,7 +53,9 @@ const Home = (props) => {
 							>
 								✏️ Edit
 							</button>
-							{}
+							{/* {update ? <ModifyPost /> : ''
+
+							} */}
 						</div>
 						<h2>{post.title}</h2>
 						<p className="newPostParagraph">
