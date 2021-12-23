@@ -1,4 +1,4 @@
-![image](https://i.imgur.com/QUPmgFY.png)
+<p align="center">![image](https://i.imgur.com/QUPmgFY.png)</p>
 
 # NerdFeed | A home for all nerds (and muggles)
 
@@ -12,7 +12,9 @@
 
 ### Description
 
+<p align="center">
 ![image](https://i.imgur.com/OjrbV3C.png)
+</p>
 
 NerdFeed is a home for all things nerd. Users are able to sign up and create a post (subject/title + content). Users are encouraged to post about anything nerdy (or non-nerdy). NerdFeed is a community where we share our likes/dislikes on video games, esports, movies, tv shows, and anything else!
 
@@ -20,7 +22,9 @@ NerdFeed is a home for all things nerd. Users are able to sign up and create a p
 
 ### How to get Started
 
+<p align="center">
 ![image](https://i.imgur.com/LHzjkQa.png)
+</p>
 
 All you'll need to do is start the React App and the content will populate! Users are able to view posts without needing to create an account (User Authentication will be implemented in the near future!).
 
