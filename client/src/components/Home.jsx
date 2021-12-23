@@ -5,6 +5,7 @@ const Home = (props) => {
 	const [likePost, setLikePost] = useState(0);
 	const [comment, setComment] = useState("");
 	const [showComments, setShowComments] = useState(false);
+	const [update, setUpdate] = useState("");
 
 	const likedPost = (post) => {
 		setLikePost(likePost + 1);
@@ -12,11 +13,16 @@ const Home = (props) => {
 
 	console.log(props, "hello");
 
-	// const [update, setUpdate] = useState("");
-
 	// UPDATE POST -------------------------
 	const modifyPost = (id) => {
-		axios.put(`http://localhost:3001/posts/${id}`, {});
+		axios.put(`http://localhost:3001/posts/${id}`, {
+			name: props.posts.name,
+			title: props.posts.title,
+			type: props.posts.type,
+			image: props.posts.image,
+			content: props.posts.content,
+			likes: props.posts.likes,
+		});
 	};
 
 	//onclick of Update button, conditional render a form
