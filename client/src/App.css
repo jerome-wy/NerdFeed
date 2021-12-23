@@ -148,9 +148,11 @@ button {
 }
 
 .newImagePost {
-	padding-right: 10px;
+	margin-right: 10px;
 	max-height: 300px;
 	max-width: 200px;
+	border-radius: 20px;
+	box-shadow: 2px 2px lightgray;
 }
 
 .postsBtn {
@@ -457,4 +459,21 @@ ul {
 
 .forgotPassword a {
 	color: var(--color2);
+}
+
+.modifyBtn_div {
+	text-align: right;
+}
+
+#modifyBtn {
+	background-color: var(--commentsColor2);
+	border: none;
+	box-shadow: 2px 2px lightgray;
+	border-radius: 10px;
+	opacity: 50%;
+}
+
+#modifyBtn:hover {
+	opacity: 100%;
+	transition: 0.2s;
 }

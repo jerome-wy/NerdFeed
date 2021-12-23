@@ -48,7 +48,7 @@ const main = async () => {
 		},
 	];
 
-	await Posts.insertMany(allPosts);
+	await Post.insertMany(allPosts);
 	console.log("Created a post using seed/allPosts.js!");
 };
 

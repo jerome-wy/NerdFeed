@@ -1,5 +1,7 @@
 import React, { useState, useReducer } from "react";
+import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import PersonalFeed from "./PersonalFeed";
 
 const SignIn = (props) => {
 	// Add and initialize state for your form. Your state should include username, password, passwordConfirm, and valid properties.
@@ -104,7 +106,12 @@ const SignIn = (props) => {
 					<b>{state.displayedMessage}</b>
 				</p>
 				<p className="forgotPassword">
-					<Link to="/SignUp">Not registered? Create an account!</Link>
+					<Route
+						exact
+						path="/PersonalFeed"
+						component={(props) => <PersonalFeed {...props} />}
+					/>
+					Not registered? Create an account!
 					<br />
 					Forgot password?
 				</p>

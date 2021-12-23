@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = (props) => {
@@ -12,15 +12,21 @@ const Home = (props) => {
 
 	console.log(props, "hello");
 
-	const updatePost = async (req, res) => {
-		axios.put(`http://localhost:3001/posts/`);
+	// const [update, setUpdate] = useState("");
+
+	// UPDATE POST -------------------------
+	const modifyPost = (id) => {
+		axios.put(`http://localhost:3001/posts/${id}`, {});
 	};
 
+	//onclick of Update button, conditional render a form
+
 	//how do i pass the parameters here??
-	const deletePost = (e, id) => {
-		console.log(id);
-		e.preventDefault();
-		axios.delete(`http://localhost:3001/posts/${e.target.id}`);
+
+	// DELETE POST -------------------------
+	const deletePost = async (id) => {
+		const res = axios.delete(`http://localhost:3001/posts/${id}`);
+		window.location.reload();
 	};
 
 	const clickComment = () => {};
@@ -33,6 +39,16 @@ const Home = (props) => {
 					<br />
 
 					<div className="postsName">
+						<div className="modifyBtn_div">
+							<button
+								className="modifyBtns"
+								id="modifyBtn"
+								onClick={() => modifyPost}
+							>
+								✏️ Edit
+							</button>
+							{}
+						</div>
 						<h2>{post.title}</h2>
 						<p className="newPostParagraph">
 							<b>Posted by:</b> {post.name}
@@ -56,7 +72,7 @@ const Home = (props) => {
 								<button
 									className="postsBtn"
 									id="deleteBtn"
-									onClick={deletePost}
+									onClick={() => deletePost(post._id)}
 								>
 									Delete
 								</button>
