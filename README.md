@@ -2,7 +2,7 @@
 
 # NerdFeed | A home for all nerds (and muggles)
 
-## Date: 12/15/2021
+## Date: 12/23/2021
 
 ### By: Jerome Wy
 
@@ -18,6 +18,7 @@ NerdFeed is a home for all things nerd. Users are able to sign up and create a p
 
 ### How to get Started
 
+![image](https://i.imgur.com/OjrbV3C.png)
 All you'll need to do is start the React App and the content will populate! If you would prefer a more curated experience, sign up for an account and provide your likes, interests, or hobbies. Your content will then match your preferences for a better user experience!
 
 ---
