@@ -43,6 +43,17 @@ const References = () => {
 					<br />
 					Associate Instructor
 				</div>
+
+				<div className="instructors">
+					<img
+						src="https://media-exp1.licdn.com/dms/image/C5603AQFWwmocMexivw/profile-displayphoto-shrink_200_200/0/1617982883328?e=1645660800&v=beta&t=IcXM3CpnLgNyIwHi6Lx6QYBRRUmftbgnaR7LnzI-GxA"
+						className="instructorImages"
+					/>
+					<br />
+					<b>Lindsay Moss</b>
+					<br />
+					Instructional Associate
+				</div>
 			</div>
 
 			<div className="referenceName_websites">
