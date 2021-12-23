@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Home = (props) => {
-	const [likePost, setLikePost] = useState(0);
-	const likedPost = (post) => {
-		setLikePost(likePost + 1);
-	};
-	console.log(props);
+const Home = (props, { post, setPost }) => {
+	// const likedPost = (id) => {
+	// 	const res = axios.put(`http://localhost:3001/posts/${id}`, {
+	// 		props.post.likes + 1
+	// 	});
+	// 	setPost(res.post.likes)
+	// 	console.log(post.likes);
+	// };
 
 	// DELETE POST -------------------------
 	const deletePost = async (id) => {
@@ -56,7 +58,7 @@ const Home = (props) => {
 									className="postsBtn"
 									id="likeBtn"
 									type="submit"
-									onClick={likedPost}
+									// onClick={() => likedPost}
 								>
 									Like
 								</button>
@@ -76,25 +78,27 @@ const Home = (props) => {
 					</div>
 				</div>
 			))}
-			{/* 
-			<div className="commentsContainer">
-				<div className="commentName">Posted by: {comments.name}</div>
 
-				<div className="commentContent">{comments.content}</div>
+			{/* {props.comment.map((comment) => (
+				<div className="commentsContainer">
+					<div className="commentName">Posted by: {comment.name}</div>
 
-				<div className="commentBtnsDiv">
-					<button className="commentsBtn" id="likeBtn">
-						Like
-					</button>
-					<button
-						className="commentsBtn"
-						id="commentBtn"
-						// onClick={clickComment}
-					>
-						Comment
-					</button>
+					<div className="commentContent">{comment.content}</div>
+
+					<div className="commentBtnsDiv">
+						<button className="commentsBtn" id="likeBtn">
+							Like
+						</button>
+						<button
+							className="commentsBtn"
+							id="commentBtn"
+							// onClick={clickComment}
+						>
+							Comment
+						</button>
+					</div>
 				</div>
-			</div> */}
+			))} */}
 		</div>
 	);
 };

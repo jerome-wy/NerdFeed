@@ -12,6 +12,10 @@ const PersonalFeed = (props) => {
 
 	return (
 		<div className="PersonalFeed_container">
+			<img
+				src="https://i.imgur.com/sH3Y7Ai.png"
+				className="accountInfoBanner"
+			/>
 			<div className="avatarPicture_div">
 				<img src={props.user[3].avatar} className="avatarPicture" />
 			</div>

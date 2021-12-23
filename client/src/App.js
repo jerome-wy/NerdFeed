@@ -11,6 +11,7 @@ import NewPost from "./components/NewPost";
 import NewComment from "./components/NewComment";
 import PersonalFeed from "./components/PersonalFeed";
 import ModifyPost from "./components/ModifyPost";
+import Upcoming from "./components/Upcoming";
 import axios from "axios";
 import "./App.css";
 
@@ -79,6 +80,7 @@ function App() {
 			<Route exact path="/References" component={References} />
 			<Route exact path="/SignIn" component={SignIn} />
 			<Route exact path="/SignUp" component={SignUp} />
+			<Route exact path="/Upcoming" component={Upcoming} />
 			<Route
 				exact
 				path="/PersonalFeed"

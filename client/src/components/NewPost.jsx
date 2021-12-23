@@ -18,8 +18,7 @@ const NewPost = (props) => {
 			likes: 0,
 		};
 		axios.post("http://localhost:3001/posts", newestPost);
-		console.log(newestPost, "successfully posted!");
-		// window.location.reload();
+		window.location.reload();
 	};
 
 	const handleChangeNewPost = (e) => {
