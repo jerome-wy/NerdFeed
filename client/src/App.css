@@ -476,3 +476,41 @@ ul {
 	opacity: 100%;
 	transition: 0.2s;
 }
+
+.PersonalFeed_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 20px;
+	margin: 20px auto;
+	width: 800px;
+	border: solid 1px lightgray;
+	border-radius: 25px;
+}
+
+.avatarPicture {
+	width: 200px;
+	height: 200px;
+	box-shadow: 2px 2px lightgray;
+	border-radius: 100px;
+	margin-right: 20px;
+}
+
+.userName_div {
+	margin-bottom: 20px;
+	width: 100px;
+	height: 20px;
+	border-bottom: solid 1px lightgray;
+	text-align: right;
+}
+
+.userInfo_div {
+	margin-bottom: 20px;
+	width: 270px;
+	height: 20px;
+	border-bottom: solid 1px lightgray;
+}
+
+ul {
+	list-style: none;
+}

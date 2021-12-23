@@ -125,8 +125,8 @@ const SignUp = () => {
 						name=""
 						className="signInForms"
 						type="text"
-						name="website"
-						value={user.website}
+						name="avatar"
+						value={user.avatar}
 						placeholder="Copy & Paste picture URL here"
 						onChange={handleChangeNewUser}
 					/>

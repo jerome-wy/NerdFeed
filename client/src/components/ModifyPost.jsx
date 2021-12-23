@@ -2,28 +2,27 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const ModifyPost = (props) => {
-	const [update, setUpdate] = useState({
-		name: "",
-		title: "",
-		type: "",
-		image: "",
-		content: "",
-	});
+	const [update, setUpdate] = useState([]);
 
-	console.log(update);
+	console.log(props.post);
 
 	// UPDATE POST -------------------------
 	const modifyPost = async (e) => {
 		console.log("modify");
 		e.preventDefault();
-		await axios.put(`http://localhost:3001/posts/${props.posts._id}`, {
+		const modifiedPost = {
 			name: update.name,
 			title: update.title,
 			type: update.type,
 			image: update.image,
 			content: update.content,
 			likes: 0,
-		});
+		};
+		await axios.put(
+			`http://localhost:3001/posts/${props.post._id}`,
+			modifiedPost
+		);
+		setUpdate(update);
 	};
 	// ------------------------------------
 
@@ -31,7 +30,7 @@ const ModifyPost = (props) => {
 		<div className="newPost_container">
 			<form>
 				<img
-					src="https://i.imgur.com/CFjickq.png"
+					src="https://i.imgur.com/e8tznOC.png"
 					alt="Write a Post!"
 					width="500px"
 				/>
@@ -43,7 +42,7 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Enter your name here"
 						name="name"
-						value={props.posts.name}
+						value={props.post.name}
 						// onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -55,7 +54,7 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Title of Post"
 						name="title"
-						// value={post.title}
+						value={update.title}
 						// onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -67,7 +66,7 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Movie Review, Game Review, Question, etc ..."
 						name="type"
-						// value={post.type}
+						value={update.type}
 						// onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -79,7 +78,7 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Please paste in the image URL here ..."
 						name="image"
-						// value={post.image}
+						value={update.image}
 						// onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -91,7 +90,7 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Write a post ..."
 						name="content"
-						// value={post.content}
+						value={update.content}
 						// onChange={handleChangeNewPost}
 					/>
 				</div>

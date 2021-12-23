@@ -3,8 +3,9 @@ import axios from "axios";
 
 const NewPost = (props) => {
 	const [newPost, setNewPost] = useState({});
+	const [newImage, setNewImage] = useState(false);
 
-	console.log(props.posts);
+	console.log(props.post);
 
 	const submitPost = (e) => {
 		e.preventDefault();
@@ -47,7 +48,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Enter your name here"
 						name="name"
-						value={props.posts.name}
+						value={newPost.name}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -59,7 +60,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Title of Post"
 						name="title"
-						value={props.posts.title}
+						value={newPost.title}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -71,7 +72,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Movie Review, Game Review, Question, etc ..."
 						name="type"
-						value={props.posts.type}
+						value={newPost.type}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -83,7 +84,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Please paste in the image URL here ..."
 						name="image"
-						value={props.posts.image}
+						value={newPost.image}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -95,7 +96,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Write a post ..."
 						name="content"
-						value={props.posts.content}
+						value={newPost.content}
 						onChange={handleChangeNewPost}
 					/>
 				</div>

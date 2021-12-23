@@ -16,7 +16,7 @@ const main = async () => {
 		},
 	];
 
-	await signUpSchema.insertMany(allUsers);
+	await SignUp.insertMany(allUsers);
 	console.log("Created users using seed/allUsers.js!");
 };
 

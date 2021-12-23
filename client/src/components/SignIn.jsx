@@ -111,7 +111,7 @@ const SignIn = (props) => {
 						path="/PersonalFeed"
 						component={(props) => <PersonalFeed {...props} />}
 					/>
-					Not registered? Create an account!
+					<Link to="/SignUp">Not registered? Create an account!</Link>
 					<br />
 					Forgot password?
 				</p>

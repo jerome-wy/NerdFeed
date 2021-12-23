@@ -7,16 +7,25 @@ const Home = (props) => {
 	const likedPost = (post) => {
 		setLikePost(likePost + 1);
 	};
+	console.log(props);
 
 	// DELETE POST -------------------------
 	const deletePost = async (id) => {
-		const res = axios.delete(`http://localhost:3001/posts/${id}`);
+		let deletePrompt = prompt(
+			"Are you sure you want to delete? (Yes or Hit Cancel to go back)"
+		);
+		if (deletePrompt === "Yes" || "yes" || "y" || "Y") {
+			const res = axios.delete(`http://localhost:3001/posts/${id}`);
+		} else if (deletePrompt !== "Yes" || "yes" || "y" || "Y") {
+			return;
+		}
 	};
+
 	// ------------------------------------
 
 	return (
 		<div className="postsContainer">
-			{props.posts.map((post) => (
+			{props.post.map((post) => (
 				<div className="newPostContainer" key={post._id}>
 					<img src={post.image} alt={post.title} className="newImagePost" />
 					<br />

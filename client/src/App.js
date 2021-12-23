@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -15,7 +15,6 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-	// POST VARIABLES ---------------------
 	const [post, setPost] = useState({
 		name: "",
 		title: "",
@@ -25,58 +24,81 @@ function App() {
 		likes: 0,
 	});
 
-	const [posts, setPosts] = useState([]);
-	// ------------------------------------
+	const [user, setUser] = useState({
+		name: "",
+		email: "",
+		password: "",
+		confirm_password: "",
+		github: "",
+		website: "",
+		avatar: "",
+	});
 
 	const [comment, setComment] = useState([]);
 
 	const getPosts = async () => {
 		const res = await axios.get("http://localhost:3001/posts");
 		const postsResponse = res.data;
-		// console.log("Here are the posts: ", postsResponse.posts);
-		setPosts(postsResponse.posts);
+
+		setPost(postsResponse.posts);
 	};
 
 	const getComments = async () => {
 		const res = await axios.get("http://localhost:3001/comments");
 		const commentsResponse = res.data;
-		// console.log("Here are the comments: ", commentsResponse.comments);
+
 		setComment(commentsResponse.comments);
+	};
+
+	const getUsers = async () => {
+		const res = await axios.get("http://localhost:3001/users");
+		const usersResponse = res.data;
+
+		setUser(usersResponse.users);
 	};
 
 	useEffect(() => {
 		getPosts();
 		getComments();
+		getUsers();
 	}, []);
 
 	return (
 		<div className="App">
+			<Route exact path="/" component={(props) => <Redirect to="/SignIn" />} />
+
 			<Header />
 			<Route
 				exact
 				path="/Home"
 				component={(props) => (
-					<Home
-						{...props}
-						posts={posts}
-						comments={comment}
-						post={post}
-						setPost={setPost}
-					/>
+					<Home {...props} comment={comment} post={post} setPost={setPost} />
 				)}
 			/>
 			<Route exact path="/About" component={About} />
 			<Route exact path="/References" component={References} />
 			<Route exact path="/SignIn" component={SignIn} />
 			<Route exact path="/SignUp" component={SignUp} />
-			<Route exact path="/PersonalFeed" component={PersonalFeed} />
+			<Route
+				exact
+				path="/PersonalFeed"
+				render={(props) => (
+					<PersonalFeed
+						{...props}
+						comments={comment}
+						post={post}
+						setPost={setPost}
+						user={user}
+					/>
+				)}
+			/>
 			<Route exact path="/Sidebar" component={Sidebar} />
 			<Route
 				exact
 				path="/NewComment"
 				render={(props) => (
 					<NewComment
-						posts={posts}
+						{...props}
 						comments={comment}
 						post={post}
 						setPost={setPost}
@@ -88,7 +110,7 @@ function App() {
 				path="/NewPost"
 				render={(props) => (
 					<NewPost
-						posts={posts}
+						{...props}
 						comments={comment}
 						post={post}
 						setPost={setPost}
@@ -100,7 +122,7 @@ function App() {
 				path="/ModifyPost"
 				render={(props) => (
 					<ModifyPost
-						posts={posts}
+						{...props}
 						comments={comment}
 						post={post}
 						setPost={setPost}
