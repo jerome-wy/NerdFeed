@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import axios from "axios";
 
-const Home = (props, { post, setPost }) => {
+const Home = (props) => {
+	const { post, setPost } = props;
+
 	// const likedPost = (id) => {
 	// 	const res = axios.put(`http://localhost:3001/posts/${id}`, {
 	// 		props.post.likes + 1

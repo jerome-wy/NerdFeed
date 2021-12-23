@@ -27,7 +27,6 @@ const ModifyPost = (props) => {
 
 	// // UPDATE POST -------------------------
 	const handleSubmit = async (e) => {
-		console.log(index, "before e prevent");
 		e.preventDefault();
 		const modifiedPost = {
 			name: update.name,
@@ -38,7 +37,6 @@ const ModifyPost = (props) => {
 		};
 		const postArr = [...post];
 		postArr[index] = modifiedPost;
-		console.log(index);
 		setPost(postArr);
 		await axios.put(
 			`http://localhost:3001/posts/${props.match.params.id}`,

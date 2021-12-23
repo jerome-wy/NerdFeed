@@ -12,7 +12,6 @@ const NewPost = (props) => {
 			type: newPost.type,
 			image: newPost.image,
 			content: newPost.content,
-			likes: 0,
 		};
 		axios.post("http://localhost:3001/posts", newestPost);
 		props.history.push(`/Home`);

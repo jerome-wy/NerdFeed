@@ -251,6 +251,11 @@ h2 {
 	box-shadow: 2px 3px lightgray;
 }
 
+.aboutBanner {
+	align-items: center;
+	text-align: center;
+}
+
 .newPost_container {
 	display: flex;
 	justify-content: space-evenly;
@@ -545,4 +550,19 @@ ul {
 	border: solid 1px lightgray;
 	border-radius: 20px;
 	padding-bottom: 20px;
+}
+
+.mernInfo_div {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.mernInfo {
+	width: 200px;
+	justify-content: space-evenly;
+	text-align: left;
+	border: solid 1px lightgray;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
 }
