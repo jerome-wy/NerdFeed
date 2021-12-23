@@ -2,13 +2,32 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const ModifyPost = (props) => {
-	const [update, setUpdate] = useState([]);
+	const {
+		post,
+		setPost,
+		update,
+		setUpdate,
+		updated,
+		setUpdated,
+		index,
+		setIndex,
+	} = props;
 
-	console.log(props.post);
+	if (!updated) {
+		for (let i = 0; i < props.post.length; i++) {
+			if (props.match.params.id === `${props.post[i]._id}`) {
+				setUpdate(props.post[i]);
+				setIndex(i);
+			}
+		}
+		setUpdated(true);
+	}
 
-	// UPDATE POST -------------------------
-	const modifyPost = async (e) => {
-		console.log("modify");
+	console.log(props);
+
+	// // UPDATE POST -------------------------
+	const handleSubmit = async (e) => {
+		console.log(index, "before e prevent");
 		e.preventDefault();
 		const modifiedPost = {
 			name: update.name,
@@ -16,19 +35,33 @@ const ModifyPost = (props) => {
 			type: update.type,
 			image: update.image,
 			content: update.content,
-			likes: 0,
 		};
+		const postArr = [...post];
+		postArr[index] = modifiedPost;
+		console.log(index);
+		setPost(postArr);
 		await axios.put(
-			`http://localhost:3001/posts/${props.post._id}`,
+			`http://localhost:3001/posts/${props.match.params.id}`,
 			modifiedPost
 		);
-		setUpdate(update);
+		setUpdated(false);
+		props.history.push(`/Home`);
 	};
 	// ------------------------------------
 
+	const handleChangeUpdatePost = (e) => {
+		const { name, value } = e.target;
+		let newPost = {
+			...update,
+			[name]: value,
+		};
+		setUpdate(newPost);
+		console.log(update);
+	};
+
 	return (
 		<div className="newPost_container">
-			<form>
+			<form onSubmit={handleSubmit}>
 				<img
 					src="https://i.imgur.com/e8tznOC.png"
 					alt="Write a Post!"
@@ -42,8 +75,8 @@ const ModifyPost = (props) => {
 						type="text"
 						placeholder="Enter your name here"
 						name="name"
-						value={props.post.name}
-						// onChange={handleChangeNewPost}
+						value={update.name}
+						onChange={handleChangeUpdatePost}
 					/>
 				</div>
 
@@ -55,7 +88,7 @@ const ModifyPost = (props) => {
 						placeholder="Title of Post"
 						name="title"
 						value={update.title}
-						// onChange={handleChangeNewPost}
+						onChange={handleChangeUpdatePost}
 					/>
 				</div>
 
@@ -67,7 +100,7 @@ const ModifyPost = (props) => {
 						placeholder="Movie Review, Game Review, Question, etc ..."
 						name="type"
 						value={update.type}
-						// onChange={handleChangeNewPost}
+						onChange={handleChangeUpdatePost}
 					/>
 				</div>
 
@@ -79,7 +112,7 @@ const ModifyPost = (props) => {
 						placeholder="Please paste in the image URL here ..."
 						name="image"
 						value={update.image}
-						// onChange={handleChangeNewPost}
+						onChange={handleChangeUpdatePost}
 					/>
 				</div>
 
@@ -91,12 +124,12 @@ const ModifyPost = (props) => {
 						placeholder="Write a post ..."
 						name="content"
 						value={update.content}
-						// onChange={handleChangeNewPost}
+						onChange={handleChangeUpdatePost}
 					/>
 				</div>
 
 				<div className="writePostBtns_container">
-					<button className="writePostBtn" type="submit" onClick={modifyPost}>
+					<button className="writePostBtn" type="submit">
 						Modify Post
 					</button>
 				</div>

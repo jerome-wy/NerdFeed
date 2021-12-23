@@ -38,7 +38,7 @@ const Home = (props, { post, setPost }) => {
 								className="modifyBtns"
 								id="modifyBtn"
 								onClick={() => {
-									props.history.push("/ModifyPost");
+									props.history.push(`/ModifyPost/${post._id}`);
 								}}
 							>
 								✏️ Edit

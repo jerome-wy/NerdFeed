@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Transition } from "react-transition-group";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -35,6 +34,12 @@ function App() {
 		website: "",
 		avatar: "",
 	});
+
+	const [update, setUpdate] = useState({});
+
+	const [updated, setUpdated] = useState(false);
+
+	const [index, setIndex] = useState("");
 
 	const [comment, setComment] = useState([]);
 
@@ -139,13 +144,19 @@ function App() {
 			/>
 			<Route
 				exact
-				path="/ModifyPost"
+				path="/ModifyPost/:id"
 				render={(props) => (
 					<ModifyPost
 						{...props}
 						comments={comment}
 						post={post}
 						setPost={setPost}
+						update={update}
+						setUpdate={setUpdate}
+						updated={updated}
+						setUpdated={setUpdated}
+						index={index}
+						setIndex={setIndex}
 					/>
 				)}
 			/>

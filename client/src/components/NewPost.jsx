@@ -3,9 +3,6 @@ import axios from "axios";
 
 const NewPost = (props) => {
 	const [newPost, setNewPost] = useState({});
-	const [newImage, setNewImage] = useState(false);
-
-	console.log(props.post);
 
 	const submitPost = (e) => {
 		e.preventDefault();
@@ -18,7 +15,7 @@ const NewPost = (props) => {
 			likes: 0,
 		};
 		axios.post("http://localhost:3001/posts", newestPost);
-		window.location.reload();
+		props.history.push(`/Home`);
 	};
 
 	const handleChangeNewPost = (e) => {
