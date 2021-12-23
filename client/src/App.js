@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
+import { Transition } from "react-transition-group";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -64,6 +65,20 @@ function App() {
 		getUsers();
 	}, []);
 
+	const duration = 500;
+
+	const defaultStyle = {
+		transition: `opacity ${duration}ms ease-in-out`,
+		opacity: 0,
+	};
+
+	const transitionStyles = {
+		entering: { opacity: 0.5 },
+		entered: { opacity: 1 },
+		existing: { opacity: 0.5 },
+		exited: { opacity: 0 },
+	};
+
 	return (
 		<div className="App">
 			<Route exact path="/" component={(props) => <Redirect to="/SignIn" />} />
@@ -76,8 +91,11 @@ function App() {
 					<Home {...props} comment={comment} post={post} setPost={setPost} />
 				)}
 			/>
+
 			<Route exact path="/About" component={About} />
+
 			<Route exact path="/References" component={References} />
+
 			<Route exact path="/SignIn" component={SignIn} />
 			<Route exact path="/SignUp" component={SignUp} />
 			<Route exact path="/Upcoming" component={Upcoming} />

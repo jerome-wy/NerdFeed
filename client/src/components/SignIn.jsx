@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import PersonalFeed from "./PersonalFeed";
 
 const SignIn = (props) => {
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 	// Add and initialize state for your form. Your state should include username, password, passwordConfirm, and valid properties.
 	const iState = {
 		username: "",
