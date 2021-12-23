@@ -2,35 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const NewPost = (props) => {
-	const [post, setPost] = useState({
-		name: "",
-		title: "",
-		type: "",
-		image: "",
-		content: "",
-		likes: 0,
-	});
+	const [newPost, setNewPost] = useState({});
+
+	console.log(props.posts);
 
 	const submitPost = (e) => {
 		e.preventDefault();
-		const newPost = {
-			name: post.name,
-			title: post.title,
-			type: post.type,
-			image: post.image,
-			content: post.content,
+		const newestPost = {
+			name: newPost.name,
+			title: newPost.title,
+			type: newPost.type,
+			image: newPost.image,
+			content: newPost.content,
 			likes: 0,
 		};
-		axios.post("http://localhost:3001/posts", newPost);
-		console.log(newPost);
-		window.location.reload();
+		axios.post("http://localhost:3001/posts", newestPost);
+		console.log(newestPost, "successfully posted!");
+		// window.location.reload();
 	};
 
 	const handleChangeNewPost = (e) => {
 		const { name, value } = e.target;
-		setPost((post) => {
+		setNewPost((newPost) => {
 			return {
-				...post,
+				...newPost,
 				[name]: value,
 			};
 		});
@@ -52,7 +47,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Enter your name here"
 						name="name"
-						value={post.name}
+						value={props.posts.name}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -64,7 +59,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Title of Post"
 						name="title"
-						value={post.title}
+						value={props.posts.title}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -76,7 +71,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Movie Review, Game Review, Question, etc ..."
 						name="type"
-						value={post.type}
+						value={props.posts.type}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -88,7 +83,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Please paste in the image URL here ..."
 						name="image"
-						value={post.image}
+						value={props.posts.image}
 						onChange={handleChangeNewPost}
 					/>
 				</div>
@@ -100,7 +95,7 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Write a post ..."
 						name="content"
-						value={post.content}
+						value={props.posts.content}
 						onChange={handleChangeNewPost}
 					/>
 				</div>

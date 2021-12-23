@@ -2,24 +2,26 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const ModifyPost = (props) => {
-	const [name, setName] = useState("");
-	const [title, setTitle] = useState("");
-	const [type, setType] = useState("");
-	const [image, setImage] = useState("");
-	const [content, setContent] = useState("");
+	const [update, setUpdate] = useState({
+		name: "",
+		title: "",
+		type: "",
+		image: "",
+		content: "",
+	});
 
-	console.log(props);
+	console.log(update);
 
 	// UPDATE POST -------------------------
-	const modifyPost = async (id) => {
+	const modifyPost = async (e) => {
 		console.log("modify");
-		// e.preventDefault();
-		axios.put(`http://localhost:3001/posts/${id}`, {
-			name: props.posts.name,
-			title: props.posts.title,
-			type: props.posts.type,
-			image: props.posts.image,
-			content: props.posts.content,
+		e.preventDefault();
+		await axios.put(`http://localhost:3001/posts/${props.posts._id}`, {
+			name: update.name,
+			title: update.title,
+			type: update.type,
+			image: update.image,
+			content: update.content,
 			likes: 0,
 		});
 	};

@@ -75,21 +75,36 @@ function App() {
 				exact
 				path="/NewComment"
 				render={(props) => (
-					<NewComment {...props} posts={posts} comments={comment} />
+					<NewComment
+						posts={posts}
+						comments={comment}
+						post={post}
+						setPost={setPost}
+					/>
 				)}
 			/>
 			<Route
 				exact
 				path="/NewPost"
 				render={(props) => (
-					<NewPost {...props} posts={posts} comments={comment} />
+					<NewPost
+						posts={posts}
+						comments={comment}
+						post={post}
+						setPost={setPost}
+					/>
 				)}
 			/>
 			<Route
 				exact
 				path="/ModifyPost"
 				render={(props) => (
-					<ModifyPost {...props} posts={posts} comments={comment} />
+					<ModifyPost
+						posts={posts}
+						comments={comment}
+						post={post}
+						setPost={setPost}
+					/>
 				)}
 			/>
 		</div>
