@@ -80,7 +80,7 @@ const updatePost = async (req, res) => {
 				res.status(500).send(err);
 			}
 			if (!post) {
-				res.status(500).send(`Post by ${user} not found!`);
+				res.status(500).send(`Post not found!`);
 			}
 			return res.status(200).json(post);
 			console.log("working");

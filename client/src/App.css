@@ -379,14 +379,13 @@ h2 {
 
 .referenceContent {
 	display: flex;
-	/* flex-wrap: wrap; */
+	flex-wrap: wrap;
 	text-align: center;
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
 	border: solid 1px lightgray;
 	border-radius: 20px;
-	width: 800px;
 }
 
 .instructorImages {

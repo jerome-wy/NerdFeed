@@ -1,42 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const NewPost = (props) => {
-	const [post, setPost] = useState({
-		name: "",
-		title: "",
-		type: "",
-		image: "",
-		content: "",
-		likes: 0,
-	});
+const ModifyPost = (props) => {
+	const [name, setName] = useState("");
+	const [title, setTitle] = useState("");
+	const [type, setType] = useState("");
+	const [image, setImage] = useState("");
+	const [content, setContent] = useState("");
 
-	const commentClick = () => {};
+	console.log(props);
 
-	const submitPost = (e) => {
-		e.preventDefault();
-		const newPost = {
-			name: post.name,
-			title: post.title,
-			type: post.type,
-			image: post.image,
-			content: post.content,
+	// UPDATE POST -------------------------
+	const modifyPost = async (id) => {
+		console.log("modify");
+		// e.preventDefault();
+		axios.put(`http://localhost:3001/posts/${id}`, {
+			name: props.posts.name,
+			title: props.posts.title,
+			type: props.posts.type,
+			image: props.posts.image,
+			content: props.posts.content,
 			likes: 0,
-		};
-		axios.post("http://localhost:3001/posts", newPost);
-		console.log(newPost);
-		window.location.reload();
-	};
-
-	const handleChangeNewPost = (e) => {
-		const { name, value } = e.target;
-		setPost((post) => {
-			return {
-				...post,
-				[name]: value,
-			};
 		});
 	};
+	// ------------------------------------
 
 	return (
 		<div className="newPost_container">
@@ -54,8 +41,8 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Enter your name here"
 						name="name"
-						value={post.name}
-						onChange={handleChangeNewPost}
+						value={props.posts.name}
+						// onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -66,8 +53,8 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Title of Post"
 						name="title"
-						value={post.title}
-						onChange={handleChangeNewPost}
+						// value={post.title}
+						// onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -78,8 +65,8 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Movie Review, Game Review, Question, etc ..."
 						name="type"
-						value={post.type}
-						onChange={handleChangeNewPost}
+						// value={post.type}
+						// onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -90,8 +77,8 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Please paste in the image URL here ..."
 						name="image"
-						value={post.image}
-						onChange={handleChangeNewPost}
+						// value={post.image}
+						// onChange={handleChangeNewPost}
 					/>
 				</div>
 
@@ -102,14 +89,14 @@ const NewPost = (props) => {
 						type="text"
 						placeholder="Write a post ..."
 						name="content"
-						value={post.content}
-						onChange={handleChangeNewPost}
+						// value={post.content}
+						// onChange={handleChangeNewPost}
 					/>
 				</div>
 
 				<div className="writePostBtns_container">
-					<button className="writePostBtn" type="submit" onClick={submitPost}>
-						Submit Post
+					<button className="writePostBtn" type="submit" onClick={modifyPost}>
+						Modify Post
 					</button>
 				</div>
 			</form>
@@ -117,4 +104,4 @@ const NewPost = (props) => {
 	);
 };
 
-export default NewPost;
+export default ModifyPost;

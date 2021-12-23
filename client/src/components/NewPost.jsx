@@ -11,8 +11,6 @@ const NewPost = (props) => {
 		likes: 0,
 	});
 
-	const commentClick = () => {};
-
 	const submitPost = (e) => {
 		e.preventDefault();
 		const newPost = {

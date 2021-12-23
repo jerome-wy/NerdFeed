@@ -10,18 +10,31 @@ import Sidebar from "./components/Sidebar";
 import NewPost from "./components/NewPost";
 import NewComment from "./components/NewComment";
 import PersonalFeed from "./components/PersonalFeed";
+import ModifyPost from "./components/ModifyPost";
 import axios from "axios";
 import "./App.css";
 
 function App() {
-	const [post, setPost] = useState({});
+	// POST VARIABLES ---------------------
+	const [post, setPost] = useState({
+		name: "",
+		title: "",
+		type: "",
+		image: "",
+		content: "",
+		likes: 0,
+	});
+
+	const [posts, setPosts] = useState([]);
+	// ------------------------------------
+
 	const [comment, setComment] = useState([]);
 
 	const getPosts = async () => {
 		const res = await axios.get("http://localhost:3001/posts");
 		const postsResponse = res.data;
 		// console.log("Here are the posts: ", postsResponse.posts);
-		setPost(postsResponse.posts);
+		setPosts(postsResponse.posts);
 	};
 
 	const getComments = async () => {
@@ -43,7 +56,13 @@ function App() {
 				exact
 				path="/Home"
 				component={(props) => (
-					<Home {...props} posts={post} comments={comment} />
+					<Home
+						{...props}
+						posts={posts}
+						comments={comment}
+						post={post}
+						setPost={setPost}
+					/>
 				)}
 			/>
 			<Route exact path="/About" component={About} />
@@ -56,14 +75,21 @@ function App() {
 				exact
 				path="/NewComment"
 				render={(props) => (
-					<NewComment {...props} posts={post} comments={comment} />
+					<NewComment {...props} posts={posts} comments={comment} />
 				)}
 			/>
 			<Route
 				exact
 				path="/NewPost"
 				render={(props) => (
-					<NewPost {...props} posts={post} comments={comment} />
+					<NewPost {...props} posts={posts} comments={comment} />
+				)}
+			/>
+			<Route
+				exact
+				path="/ModifyPost"
+				render={(props) => (
+					<ModifyPost {...props} posts={posts} comments={comment} />
 				)}
 			/>
 		</div>
