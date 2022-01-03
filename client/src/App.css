@@ -23,6 +23,7 @@ body {
 	background-color: rgb(120, 170, 190);
 	justify-content: space-evenly;
 	height: 60px;
+	border-bottom: solid 1px lightgray;
 }
 
 .Nav_container {
@@ -65,7 +66,7 @@ button {
 }
 
 .signInBtn:hover {
-	background-color: lightseagreen;
+	background-color: var(--color1);
 	transition: 0.5s;
 }
 .signUpBtn {

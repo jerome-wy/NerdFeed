@@ -40,6 +40,14 @@ const Upcoming = () => {
 					Post as well as DELETING a Post does not automatically re-render upon
 					submission.
 				</div>
+
+				<h2>Search Bar</h2>
+				<div className="upcomingItem">
+					A search bar was something I wanted to implmenent with this project
+					but did not have enough time (focused a lot on styling and meeting
+					MVP). This search bar will be added to the Home Page above all of the
+					posts!
+				</div>
 			</div>
 		</div>
 	);
