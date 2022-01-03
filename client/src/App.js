@@ -16,6 +16,7 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
+	// FOR NEW POSTS
 	const [post, setPost] = useState({
 		name: "",
 		title: "",
@@ -25,6 +26,7 @@ function App() {
 		likes: 0,
 	});
 
+	// FOR NEW USERS SIGNING UP
 	const [user, setUser] = useState({
 		name: "",
 		email: "",
@@ -35,6 +37,7 @@ function App() {
 		avatar: "",
 	});
 
+	// FOR MODIFYING POSTS
 	const [update, setUpdate] = useState({});
 
 	const [updated, setUpdated] = useState(false);
@@ -43,6 +46,7 @@ function App() {
 
 	const [comment, setComment] = useState([]);
 
+	// AXIOS CALLS TO GET ALL POSTS, COMMENTS, AND USERS
 	const getPosts = async () => {
 		const res = await axios.get("http://localhost:3001/posts");
 		const postsResponse = res.data;
@@ -86,8 +90,6 @@ function App() {
 
 	return (
 		<div className="App">
-			<Route exact path="/" component={(props) => <Redirect to="/SignIn" />} />
-
 			<Header />
 			<Route
 				exact
